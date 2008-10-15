@@ -258,19 +258,18 @@ var ChatRoom = function(client, browser) {
 				self.preferences_element = document.createElement("form")
 				self.preferences_element.id = "steezy-preferences"
 				self.client.footer().appendChild(self.preferences_element)
+				self.preferences_element.appendChild(document.createElement('h3')).appendChild(document.createTextNode('Steezy')).id = "steezy-header"
 				
-				self.aliases_input 					= self.create_preference_element('alias list', 'text')		
+				self.aliases_input 					= self.create_preference_element('', 'text')		
+				self.growl_checkbox 				= self.create_preference_element('growl', 'checkbox', true)
+				self.growl_sticky_checkbox 	= self.create_preference_element('sticky', 'checkbox')		
 				self.preferences_element.appendChild(document.createElement('br'))				
-				self.growl_checkbox 				= self.create_preference_element('growls', 'checkbox', true)
-				self.growl_sticky_checkbox 	= self.create_preference_element('sticky growls', 'checkbox')		
-				self.preferences_element.appendChild(document.createElement('br'))				
-				self.inline_images_checkbox = self.create_preference_element('inline images', 'checkbox', true)
-				self.inline_tweets_checkbox = self.create_preference_element('inline tweets', 'checkbox', true)				
-				self.videos_checkbox = self.create_preference_element('inline videos', 'checkbox', true)				
-				self.preferences_element.appendChild(document.createElement('br'))				
+				self.inline_images_checkbox = self.create_preference_element('images', 'checkbox', true)
+				self.inline_tweets_checkbox = self.create_preference_element('tweets', 'checkbox', true)				
+				self.videos_checkbox = self.create_preference_element('videos', 'checkbox', true)				
 				self.emoticons_checkbox = self.create_preference_element('emoticons', 'checkbox', true)
 				self.preferences_element.appendChild(document.createElement('br'))
-				self.away_message 					= self.create_preference_element('away message', 'text')		
+				self.away_message 					= self.create_preference_element('', 'text')		
 				self.away_checkbox					= self.create_preference_element('away', 'checkbox')
 			}
 			window.setTimeout(self.insert_preferences_element, self.period)
